@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEKCOK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Updock&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/tengbao/Vanta/master/dist/vanta.fog.min.js"></script>
+</head>
+<body>
+    <div id="vanta-bg" class="container">
+        <div class="content">
+            <img src="idle.gif" alt="Icon Love Calculator">
+            <h1>Selamat Datang di CEKCOK</h1>
+            <div class="inputarea">
+                <input type="text" placeholder="Nama Kamu" id="NameOne" onfocus="this.value = ''">
+                <input type="text" placeholder="Nama Gebetan" id="NameTwo" onfocus="this.value = ''">
+            </div>
+            <a href="#" onclick="love()">CEK KECOCOKAN</a>
+            <p id="print">Nanti hasilnya disini</p>
+            <p id="statement"></p>
+        </div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="lagulaguan.mp3" type="audio/mp3";>
+    </audio>
+
+    <div id="popup" class="popup">
+        <span id="popup-message"></span>
+        <img id="popup-img" src="" alt="Gift">
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function love() {
+            var name1 = document.getElementById("NameOne").value;
+            var name2 = document.getElementById("NameTwo").value;
+            
+            if (name1.length < 3) {
+                alert("Enter at least 3 characters for Your Name");
+                return;
+            }
+            if (name2.length < 3) {
+                alert("Enter at least 3 characters for Your Lover's Name");
+                return;
+            }
+
+            var random = Math.floor(Math.random() * 101);
+            document.getElementById("print").innerHTML = name1 + " and " + name2 + " = " + random + "% of love";
+
+            if (random <= 50) {
+                document.getElementById("statement").innerHTML = "Semoga bertemu dengan yang lebih cocok";
+            } else {
+                document.getElementById("statement").innerHTML = "Selamat anda kawin";
+            }
+
+            if (random >= 40) {
+                showPopup("Ciee semoga langgeng! 🥰🥰🫶🏻", "ciee.gif");
+            } else {
+                showPopup("Yahh, kayaknya kalian belum berjodoh 😔", "nt.gif");
+            }
+        }
+
+        function showPopup(message, imgSrc) {
+            document.getElementById("popup-message").innerText = message;
+            document.getElementById("popup-img").src = imgSrc;
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+     
+        window.addEventListener('load', function() {
+            VANTA.FOG({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00
+            });
+        });
+    </script>
+</body>
+</html>

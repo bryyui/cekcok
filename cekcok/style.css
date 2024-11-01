@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Vollkorn", serif;
+    overflow: hidden; 
+    background: transparent; 
+}
+
+.container {
+    height: 100vh; 
+    width: 100vw;  
+    position: relative; 
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    background-color: #f0dddd;
+    margin: center;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    max-width: 500px; 
+    margin: auto; 
+    position: flex;
+}
+
+.content img {
+    width: 140px;
+    margin: 0 auto;
+    display: block;
+}
+
+.content h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #c04763;
+}
+
+.inputarea {
+    display: flex;
+    border-radius: 8PX;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+.inputarea input {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid #d7385c;
+    padding: 10px;
+    font-size: 18px;
+    outline: none; 
+}
+
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #d7385c;
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+#print {
+    text-align: center;
+    background-color: #d7385c;
+    padding: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#statement {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #2b0b0b;
+    text-transform: uppercase;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup img {
+    width: 200px;
+    height: auto;
+    margin: 10px 0;
+}
+
+.popup button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #d7385c;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
